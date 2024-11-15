@@ -1,0 +1,116 @@
+/* Reiniciar márgenes y bordes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body y fondo */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #e0f2e9; /* Fondo verde apagado */
+    color: #2d6a4f; /* Color de texto verde oscuro */
+    line-height: 1.6;
+}
+
+/* Cabecera */
+header {
+    background: linear-gradient(135deg, #005f2d, #004d1f); /* Degradado de verde */
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 5px solid #2d6a4f;
+}
+
+header img {
+    width: 10%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Navegación */
+nav ul {
+    display: flex;
+    justify-content: center;
+    background-color: #4caf50; /* Verde brillante */
+    list-style: none;
+    padding: 15px 0;
+    margin-top: 10px;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+/* Secciones principales */
+main section {
+    padding: 40px 20px;
+    margin: 20px;
+    background-color: #f4f9f4; /* Fondo claro */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos de secciones */
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #004d1f;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilo del catálogo */
+#catalogo .catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Usamos Grid para hacerlo responsivo */
+    gap: 20px;
+    margin-top: 30px;
+}
+
+#catalogo .planta {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#catalogo .planta:hover {
+    transform: scale(1.05);
+}
+
+#catalogo .planta img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#catalogo .planta h3 {
+    margin-top: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #006d2c;
+}
+
+#catalogo .planta p {
+    font-family: 'Open Sans', sans-serif;

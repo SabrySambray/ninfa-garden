@@ -1,0 +1,29 @@
+header {
+    background: linear-gradient(135deg, #189e37, #612563); /* Degradado de verde */
+    color: rgb(19, 151, 129);
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 5px solid #66034d;
+}
+header .logo {
+    border-radius: 100%;
+}
+header img {
+    width: 10%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+header h1 {
+/*    
+    font-size: 3rem;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    */
+    font-size: 3rem;
+    font-family: "Mystery Quest", system-ui;
+    font-weight: 400;
+    font-style: normal;    
+
+}

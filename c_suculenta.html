@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninfa-Garden</title>
+    <link rel="shortcut icon" href="img/leaf.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap" rel="stylesheet"> 
+
+</head>
+<body>
+
+    <header>
+        <img src="img/suculenta_bckgrnd.png" alt="Plantas de Ninfa-Garden" class="logo">
+        <h1>Ninfa-Garden</h1>
+    </header>
+
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <!--<li><a href="#sobre">Sobre Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>-->
+        </ul>
+    </nav>    
+    <main>
+        <section id="catalogo">
+            <h2>Catálogo de suculentas </h2>
+            <div class="catalogo">
+                <!-- Producto 1: garrita de oso -->
+                <div class="product">
+                    <img src="img/suculenta_bckgrnd.jpg" alt="Suculenta">
+                    <h3>Suculenta</h3>
+                    <p>Precio: 10 USD</p>
+                    <button class="add-to-cart" data-product="Suculenta" data-price="10">Agregar al Carrito</button>
+                    
+                </div>
+
+                <!-- Producto 2: cebritas -->
+                <div class="product">
+                    <img src="img/flores_bckgrnd.jpg" alt="Flores de Temporada">
+                    <h3>Garrita de Oso</h3>
+                    <p>Precio: 15 USD</p>
+                    <button class="add-to-cart" data-product="Flores de Temporada" data-price="15">Agregar al Carrito</button>
+                </div>
+
+                <!-- Producto 3: kalanchoe -->
+                <div class="product">
+                    <img src="img/suculenta_bckgrnd.jpg" alt="kalanchoes">
+                    <h3>Kalanchoes</h3>
+                    <p>Precio: 20 USD</p>
+                    <button class="add-to-cart" data-product="Planta Ornamental" data-price="20">Agregar al Carrito</button>
+                </div>
+
+                <!-- Producto 4: Cactus -->
+                <div class="product">
+                    <img src="img/ornamentales_bckgrnd.jpg" alt="Cactus">
+                    <h3>Cactus</h3>
+                    <p>Precio: 12 USD</p>
+                    <button class="add-to-cart" data-product="Cactus" data-price="12">Agregar al Carrito</button>
+                </div>
+
+                <!-- Producto 5: arbol de jade -->
+                <div class="product">
+                    <img src="img/suculenta_bckgrnd.jpg" alt="arbol de jade ">
+                    <h3>Arbol de Jade </h3>
+                    <p>Precio: 18 USD</p>
+                    <button class="add-to-cart" data-product="Helecho" data-price="18">Agregar al Carrito</button>
+                </div>
+
+                <!-- Producto 6: lithops -->
+                <div class="product">
+                    <img src="img/ornamentales_bckgrnd.jpg" alt="Bonsai">
+                    <h3>Lithops</h3>
+                    <p>Precio: 25 USD</p>
+                    <button class="add-to-cart" data-product="Bonsai" data-price="25">Agregar al Carrito</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Carrito de compras -->
+<section id="carrito">
+    <h2>Carrito de Compras</h2>
+    <ul id="cart-items"></ul>
+    <p id="total-price">Total: 0 USD</p>
+    <button id="checkout">Finalizar Compra</button>
+</section>
+<!-- Código JavaScript al final del archivo -->
+<script>
+    // Array para almacenar los productos en el carrito
+    const cart = [];
+
+    // Seleccionamos elementos del DOM
+    const cartItems = document.getElementById("cart-items");
+    const totalPriceEl = document.getElementById("total-price");
+    const carritoSection = document.getElementById("carrito");
+
+    // Función para actualizar el carrito en el DOM
+    function updateCart() {
+        cartItems.innerHTML = "";  // Limpiar contenido anterior
+        let total = 0;
+
+        // Añadir productos al carrito y calcular el total
+        cart.forEach((item, index) => {
+            const li = document.createElement("li");
+            li.textContent = `${item.name} - ${item.price} USD`;
+            
+            const removeButton = document.createElement("button");
+            removeButton.textContent = "Eliminar";
+            removeButton.onclick = () => removeFromCart(index);
+            
+            li.appendChild(removeButton);
+            cartItems.appendChild(li);
+            total += item.price;
+        });
+
+        totalPriceEl.textContent = `Total: ${total} USD`;
+        carritoSection.style.display = cart.length > 0 ? "block" : "none";
+    }
+
+    // Función para agregar productos al carrito
+    function addToCart(name, price) {
+        cart.push({ name, price });
+        updateCart();
+    }
+
+    // Función para eliminar productos del carrito
+    function removeFromCart(index) {
+        cart.splice(index, 1);
+        updateCart();
+    }
+
+    // Añadir evento a los botones "Agregar al Carrito"
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+        button.addEventListener("click", () => {
+            const name = button.getAttribute("data-product");
+            const price = parseInt(button.getAttribute("data-price"));
+            addToCart(name, price);
+        });
+    });
+    // Seleccionamos el botón
+    const backToTopButton = document.getElementById("back-to-top");
+
+    // Mostrar el botón cuando el usuario hace scroll hacia abajo
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    });
+
+    // Volver al inicio cuando se hace clic en el botón
+    backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" // Desplazamiento suave
+        });
+    }); 
+</script>
+
+
+
+    <footer>
+        <p>&copy; 2024 Ninfa-Garden. Todos los derechos reservados.</p>
+
+    </footer>
+
+    <!-- Agregar el script de JavaScript al final del documento 
+    <script src="js/script.js"></script>
+    <button id="back-to-top">↑ Volver al Inicio</button> -->
+
+
+</body>
+</html>

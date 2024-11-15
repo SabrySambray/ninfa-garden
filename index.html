@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninfa-Garden</title>
+    <link rel="shortcut icon" href="img/flores_bckgrnd.jpg" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+
+<body>
+
+    <header>
+        
+        <img src="img/flores_bckgrnd_bak.jpg" alt="Plantas de Ninfa-Garden" class="logo">
+        <h1>Ninfa-Garden</h1>
+    </header>
+    
+
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#sobre">Sobre Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Consultas</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+        </ul>
+    </nav>   
+
+    <main>
+        <section id="inicio">
+            <h2>Bienvenido a Ninfa-Garden</h2>
+            <p>En Ninfa-Garden, nos especializamos en proporcionar una amplia variedad de plantas de regalía, ideales para embellecer cualquier espacio. Ofrecemos una selección de plantas ornamentales, suculentas y flores, todas cuidadosamente cultivadas para asegurar su calidad y belleza.</p>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre Nosotros</h2>
+            <p><strong>Ninfa-Garden</strong> nace con la misión de acercar la naturaleza a tu vida, creando espacios verdes únicos y acogedores. Somos un equipo apasionado por las plantas y el diseño de jardines, dedicados a ofrecerte la mejor calidad en plantas ornamentales, suculentas, flores y decoración para exteriores.</p>
+        </section>
+
+        <section id="servicios">
+            <h2>Servicios</h2>
+            <ul>
+                <li><strong>Venta de Plantas y Flores:</strong> Selección de plantas ornamentales, suculentas, y flores de temporada.</li>
+                <li><strong>Decoración de Jardines:</strong> Elementos decorativos como macetas, estatuas y fuentes.</li>
+                <li><strong>Asesoría Personalizada:</strong> Te ayudamos a elegir las plantas y accesorios ideales para tu espacio.</li>
+                <li><strong>Mantenimiento de Jardines:</strong> Servicio regular para mantener tu jardín en perfectas condiciones.</li>
+                <li><strong>Venta de Animales de Jardín:</strong> Aves y peces para dar vida a tu jardín.</li>
+            </ul>
+        </section>
+
+        <section id="catalogo">
+            <h2>Catálogo de Plantas</h2>
+            <div class="catalogo">
+                <div class="planta">
+                    <img src="img/suculenta_bckgrnd.jpg" alt="Suculenta" class="planta-img">
+                    <h3>Suculenta</h3>
+                    <p>Una planta resistente y fácil de cuidar, perfecta para interiores y exteriores.</p>
+                    <a href="c_suculenta.html">
+                        <button class="btn-link"> Ver más </button>
+                    </a>
+                </div>
+
+                <div class="planta">
+                    <img src="img/flores_bckgrnd.jpg" alt="Flores" class="planta-img">
+                    <h3>Flores de Temporada</h3>
+                    <p>Disfruta de colores vibrantes con nuestras flores frescas de temporada.</p>
+                    <a href="c_suculenta.html">
+                        <button class="btn-link"> Ver más </button>
+                    </a>
+                </div>
+                <div class="planta">
+                    <img src="img/ornamentales_bckgrnd.jpg" alt="Planta Ornamental" class="planta-img">
+                    <h3>Plantas Ornamentales</h3>
+                    <p>Plantas decorativas que aportan un toque elegante a tu hogar o jardín.</p>
+                    <a href="c_suculenta.html">
+                        <button class="btn-link"> Ver más </button>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section id="contacto">
+            <h2>Consultas</h2>
+            <form action="https://formspree.io/f/mdkonkrz" method="POST">
+                <div>
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="_replyto" required>
+                </div>
+                <div>
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <div>
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </section>
+        
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <ul>
+                <li><strong>Dirección:</strong> Calle Verde 123, Ciudad Jardín</li>
+                <li><strong>Teléfono:</strong> +34 123 456 789</li>
+                <li><strong>Email:</strong> contacto@ninfa-garden.com</li>
+                <li><strong>Horario de Atención:</strong> Lunes a Viernes, 9:00 a 18:00</li>
+            </ul>
+        </section>
+    </main>
+    <section id="mapa">
+        <h2>Ubicación de Ninfa-Garden</h2>
+        <p>Visítanos en nuestra tienda física:</p>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.2535647021186!2d-58.71949022326907!3d-34.673549361191306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc18e622a9973%3A0x772f183cbb7bf392!2sNinfaGarden!5e0!3m2!1ses-419!2sar!4v1730847209830!5m2!1ses-419!2sar"
+            width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2024 Ninfa-Garden. Todos los derechos reservados.</p>
+        <!-- Redes sociales -->
+    <div class="social-media">
+        <a href="https://www.facebook.com/ninfagarden" target="_blank" class="social-icon">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/ninfa_garden29?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i>
+        <a href="https://www.linkedin.com/company/ninfagarden" target="_blank" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </a>
+    </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    
+
+</body>
+</html>

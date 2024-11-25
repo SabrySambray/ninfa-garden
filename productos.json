@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Suculenta",
+        "price": 10,
+        "description": "Una planta resistente y fácil de cuidar.",
+        "image": "img/suculenta_bckgrnd.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Garrita de Oso",
+        "price": 15,
+        "description": "Planta con hojas peludas y suaves.",
+        "image": "img/flores_bckgrnd.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Kalanchoes",
+        "price": 20,
+        "description": "Planta con flores coloridas y duraderas.",
+        "image": "img/suculenta_bckgrnd.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Cactus",
+        "price": 12,
+        "description": "Planta con espinas y fácil de cuidar.",
+        "image": "img/ornamentales_bckgrnd.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Arbol de Jade",
+        "price": 18,
+        "description": "Planta de hojas gruesas y brillantes.",
+        "image": "img/suculenta_bckgrnd.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Lithops",
+        "price": 25,
+        "description": "Planta suculenta que parece piedras.",
+        "image": "img/ornamentales_bckgrnd.jpg"
+    }
+]

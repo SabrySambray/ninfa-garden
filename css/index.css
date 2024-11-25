@@ -106,6 +106,47 @@ h2 {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Estilo de Cartas de plantas API REST */
+#plantas-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.plant-card {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.plant-card:hover {
+    transform: scale(1.05);
+}
+
+.plant-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.plant-card h3 {
+    color: #4caf50;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.plant-card p {
+    font-size: 1rem;
+    margin: 0 10px 10px;
+    color: #757575;
+}
+
 /* Estilo del catálogo */
 #catalogo .catalogo {
     display: grid;
@@ -192,218 +233,194 @@ h2 {
     background-color: #45a049;
 }
 
+/* Estilos para el catálogo */
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product h3 {
+    font-size: 1.5em;
+    margin: 15px 0;
+    color: #333;
+}
+
+.product p {
+    color: #666;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.add-to-cart {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.add-to-cart:hover {
+    background-color: #218838;
+}
+
 /* Estilos para el carrito de compras */
 #carrito {
-    border: 1px solid #760ccc;
+    border: 1px solid #ddd;
     padding: 20px;
-    max-width: 300px;
-    background-color: #c50c0c;
+    max-width: 350px;
+    background-color: #fff;
     position: fixed;
     top: 10%;
     right: 10%;
     display: none; /* Oculto hasta que el usuario lo use */
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(194, 25, 25, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #carrito h2 {
-    font-size: 1.4em;
-    margin-bottom: 10px;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
 }
 
 #cart-items {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 #cart-items li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+#cart-items li:last-child {
+    border-bottom: none;
 }
 
 #cart-items li button {
-    background-color: #cf200c;
-    color: rgb(28, 230, 21);
+    background-color: #dc3545;
+    color: #fff;
     border: none;
-    padding: 5px;
+    padding: 5px 10px;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 5px;
     font-size: 0.9em;
+    transition: background-color 0.2s;
 }
 
 #cart-items li button:hover {
-    background-color: #e46d0c;
+    background-color: #c82333;
+}
+
+#cart-items li input {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
 }
 
 #total-price {
     font-weight: bold;
-    margin-top: 10px;
-    font-size: 1.1em;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
 }
 
 #checkout {
     padding: 10px;
-    background-color: #4CAF50;
-    color: rgb(173, 131, 131);
+    background-color: #007bff;
+    color: #fff;
     border: none;
     cursor: pointer;
     font-size: 1em;
-    margin-top: 10px;
+    margin-top: 20px;
     border-radius: 5px;
     width: 100%;
+    transition: background-color 0.2s;
 }
 
 #checkout:hover {
-    background-color: #45a049;
+    background-color: #0056b3;
 }
 
-#catalogo .planta p {
-    font-family: 'Open Sans', sans-serif;
-        }
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #94668c;
-            border-radius: 60px;
-        }
+/* Estilos para el formulario */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        
-        form div {
-            margin-bottom: 5px;
-        }
-        
-        form label {
-            font-weight: bold;
-            display: block;
-        }
-        
-        form input, form textarea {
-            width: 100%;
-            padding: 10px;
-            font-size: 10px;
-            border: 1px solid #7c4270;
-            border-radius: 4px;
-        }
-        
-        form button {
-            background-color: #4CAF50;
-            color: rgb(161, 77, 140);
-            padding: 10px 20px;
-            font-size: 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        
-        form button:hover {
-            background-color: #3cf087;
-        }
-        /* Estilos para el botón "Volver al Inicio" */
-#back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #4CAF50;
-    color: white;
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
     border: none;
-    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    display: none; /* Oculto por defecto */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s;
 }
 
-#back-to-top:hover {
-    background-color: #45a049;
+form button:hover {
+    background-color: #218838;
 }
-
-        .gallery {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            transition: transform 0.3s;
-        }
-        .gallery img:hover {
-            transform: scale(1.1);
-        }
-        #mapa {
-            text-align: center;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #9c7490; /* Fondo suave alrededor del mapa */
-            border-radius: 10px; /* Esquinas redondeadas */
-            box-shadow: 0px 4px 10px rgba(228, 8, 8, 0.1); /* Sombra suave para darle profundidad */
-            max-width: 900%; /* Hace que el mapa sea más responsivo */
-            overflow: hidden; /* Evita que el mapa sobresalga de los bordes redondeados */
-        }
-        
-        #mapa iframe {
-            border-radius: 10px; /* Esquinas redondeadas del mapa */
-            border: none; /* Eliminar el borde predeterminado */
-            width: 100%; /* Asegura que el mapa ocupe todo el ancho disponible */
-            height: 450px; /* Altura fija del mapa */
-        }
-        #carrito {
-            border: 1px solid #ddd;
-            padding: 20px;
-            max-width: 300px;
-            background-color: #f9f9f9;
-            position: fixed;
-            top: 10%;
-            right: 10%;
-            display: none; /* Lo ocultamos hasta que el usuario lo use */
-        }
-        
-        #cart-items {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        #cart-items li {
-            margin-bottom: 10px;
-        }
-        
-        #total-price {
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        
-        #checkout {
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        
-        #checkout:hover {
-            background-color: #45a049;
-        }
-        
-        
-        #mapa h2 {
-            font-size: 30px;
-            color: #c503b5;
-            margin-bottom: 15px;
-            font-family: 'Arial', sans-serif;
-        }
-        
-        #mapa p {
-            font-size: 18px;
-            color: #02cedd;
-            margin-bottom: 30px;
-            font-family: 'Arial', sans-serif;
-        }
-
 /* Estilos para el botón "Ver más" */
 .btn-link {
     background-color: #865a79; /* Color de fondo verde */

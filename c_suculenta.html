@@ -34,16 +34,16 @@
                         <a class="nav-link" href="index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#sobre">Sobre Nosotros</a>
+                        <a class="nav-link" href="index.html#sobre">Sobre Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#servicios">Servicios</a>
+                        <a class="nav-link" href="index.html#servicios">Servicios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contacto">Consultas</a>
+                        <a class="nav-link" href="index.html#contacto">Consultas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#catalogo">Catálogo</a>
+                        <a class="nav-link" href="index.html#catalogo">Catálogo</a>
                     </li>
                 </ul>
             </div>
@@ -52,144 +52,124 @@
 
     <main>
         <section id="catalogo">
-            <h2>Catálogo de suculentas </h2>
-            <div class="catalogo">
-                <!-- Producto 1: garrita de oso -->
-                <div class="product">
-                    <img src="img/suculenta_bckgrnd.jpg" alt="Suculenta">
-                    <h3>Suculenta</h3>
-                    <p>Precio: 10 USD</p>
-                    <button class="add-to-cart" data-product="Suculenta" data-price="10">Agregar al Carrito</button>
-                    
-                </div>
-
-                <!-- Producto 2: cebritas -->
-                <div class="product">
-                    <img src="img/flores_bckgrnd.jpg" alt="Flores de Temporada">
-                    <h3>Garrita de Oso</h3>
-                    <p>Precio: 15 USD</p>
-                    <button class="add-to-cart" data-product="Flores de Temporada" data-price="15">Agregar al Carrito</button>
-                </div>
-
-                <!-- Producto 3: kalanchoe -->
-                <div class="product">
-                    <img src="img/suculenta_bckgrnd.jpg" alt="kalanchoes">
-                    <h3>Kalanchoes</h3>
-                    <p>Precio: 20 USD</p>
-                    <button class="add-to-cart" data-product="Planta Ornamental" data-price="20">Agregar al Carrito</button>
-                </div>
-
-                <!-- Producto 4: Cactus -->
-                <div class="product">
-                    <img src="img/ornamentales_bckgrnd.jpg" alt="Cactus">
-                    <h3>Cactus</h3>
-                    <p>Precio: 12 USD</p>
-                    <button class="add-to-cart" data-product="Cactus" data-price="12">Agregar al Carrito</button>
-                </div>
-
-                <!-- Producto 5: arbol de jade -->
-                <div class="product">
-                    <img src="img/suculenta_bckgrnd.jpg" alt="arbol de jade ">
-                    <h3>Arbol de Jade </h3>
-                    <p>Precio: 18 USD</p>
-                    <button class="add-to-cart" data-product="Helecho" data-price="18">Agregar al Carrito</button>
-                </div>
-
-                <!-- Producto 6: lithops -->
-                <div class="product">
-                    <img src="img/ornamentales_bckgrnd.jpg" alt="Bonsai">
-                    <h3>Lithops</h3>
-                    <p>Precio: 25 USD</p>
-                    <button class="add-to-cart" data-product="Bonsai" data-price="25">Agregar al Carrito</button>
-                </div>
-            </div>
+            <h2>Catálogo de suculentas</h2>
+            <div class="catalogo" id="product-list"></div>
         </section>
     </main>
-    <!-- Carrito de compras -->
-<section id="carrito">
-    <h2>Carrito de Compras</h2>
-    <ul id="cart-items"></ul>
-    <p id="total-price">Total: 0 USD</p>
-    <button id="checkout">Finalizar Compra</button>
-</section>
-<!-- Código JavaScript al final del archivo -->
-<script>
-    // Array para almacenar los productos en el carrito
-    const cart = [];
-
-    // Seleccionamos elementos del DOM
-    const cartItems = document.getElementById("cart-items");
-    const totalPriceEl = document.getElementById("total-price");
-    const carritoSection = document.getElementById("carrito");
-
-    // Función para actualizar el carrito en el DOM
-    function updateCart() {
-        cartItems.innerHTML = "";  // Limpiar contenido anterior
-        let total = 0;
-
-        // Añadir productos al carrito y calcular el total
-        cart.forEach((item, index) => {
-            const li = document.createElement("li");
-            li.textContent = `${item.name} - ${item.price} USD`;
-            
-            const removeButton = document.createElement("button");
-            removeButton.textContent = "Eliminar";
-            removeButton.onclick = () => removeFromCart(index);
-            
-            li.appendChild(removeButton);
-            cartItems.appendChild(li);
-            total += item.price;
-        });
-
-        totalPriceEl.textContent = `Total: ${total} USD`;
-        carritoSection.style.display = cart.length > 0 ? "block" : "none";
-    }
-
-    // Función para agregar productos al carrito
-    function addToCart(name, price) {
-        cart.push({ name, price });
-        updateCart();
-    }
-
-    // Función para eliminar productos del carrito
-    function removeFromCart(index) {
-        cart.splice(index, 1);
-        updateCart();
-    }
-
-    // Añadir evento a los botones "Agregar al Carrito"
-    document.querySelectorAll(".add-to-cart").forEach(button => {
-        button.addEventListener("click", () => {
-            const name = button.getAttribute("data-product");
-            const price = parseInt(button.getAttribute("data-price"));
-            addToCart(name, price);
-        });
-    });
-    // Seleccionamos el botón
-    const backToTopButton = document.getElementById("back-to-top");
-
-    // Mostrar el botón cuando el usuario hace scroll hacia abajo
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-            backToTopButton.style.display = "block";
-        } else {
-            backToTopButton.style.display = "none";
-        }
-    }); 
-</script>
-
-
-
+    <section id="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="cart-items"></ul>
+        <p id="total-price">Total: 0 USD</p>
+        <button id="checkout">Finalizar Compra</button>
+    </section>
     <footer>
         <p>&copy; 2024 Ninfa-Garden. Todos los derechos reservados.</p>
-
     </footer>
-
     <script src="js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Cargar productos desde el JSON
+        fetch('productos.json')
+            .then(response => response.json())
+            .then(data => {
+                const productList = document.getElementById('product-list');
+                data.forEach(product => {
+                    const productDiv = document.createElement('div');
+                    productDiv.classList.add('product');
+                    productDiv.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <p>Precio: ${product.price} USD</p>
+                        <button class="add-to-cart" data-product="${product.name}" data-price="${product.price}">Agregar al Carrito</button>
+                        <button class="view-details" data-description="${product.description}">Ver Detalles</button>
+                    `;
+                    productList.appendChild(productDiv);
+                });
 
+                // Añadir evento a los botones "Agregar al Carrito"
+                document.querySelectorAll(".add-to-cart").forEach(button => {
+                    button.addEventListener("click", () => {
+                        const name = button.getAttribute("data-product");
+                        const price = parseInt(button.getAttribute("data-price"));
+                        addToCart(name, price);
+                    });
+                });
 
+                // Añadir evento a los botones "Ver Detalles"
+                document.querySelectorAll(".view-details").forEach(button => {
+                    button.addEventListener("click", () => {
+                        const description = button.getAttribute("data-description");
+                        alert(description);
+                    });
+                });
+            });
+
+        // Array para almacenar los productos en el carrito
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Seleccionamos elementos del DOM
+        const cartItems = document.getElementById("cart-items");
+        const totalPriceEl = document.getElementById("total-price");
+        const carritoSection = document.getElementById("carrito");
+
+        // Función para actualizar el carrito en el DOM
+        function updateCart() {
+            cartItems.innerHTML = "";  // Limpiar contenido anterior
+            let total = 0;
+
+            // Añadir productos al carrito y calcular el total
+            cart.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.textContent = `${item.name} - ${item.price} USD`;
+
+                const removeButton = document.createElement("button");
+                removeButton.textContent = "Eliminar";
+                removeButton.onclick = () => removeFromCart(index);
+
+                const quantityInput = document.createElement("input");
+                quantityInput.type = "number";
+                quantityInput.value = item.quantity;
+                quantityInput.min = 1;
+                quantityInput.onchange = () => updateQuantity(index, quantityInput.value);
+
+                li.appendChild(quantityInput);
+                li.appendChild(removeButton);
+                cartItems.appendChild(li);
+                total += item.price * item.quantity;
+            });
+
+            totalPriceEl.textContent = `Total: ${total} USD`;
+            carritoSection.style.display = cart.length > 0 ? "block" : "none";
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        // Función para agregar productos al carrito
+        function addToCart(name, price) {
+            const existingProduct = cart.find(item => item.name === name);
+            if (existingProduct) {
+                existingProduct.quantity++;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+            updateCart();
+        }
+
+        // Función para eliminar productos del carrito
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        // Función para actualizar la cantidad de productos en el carrito
+        function updateQuantity(index, quantity) {
+            cart[index].quantity = parseInt(quantity);
+            updateCart();
+        }
+
+        // Inicializar el carrito al cargar la página
+        updateCart();
+    </script>
 </body>
 </html>

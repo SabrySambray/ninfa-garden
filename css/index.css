@@ -42,31 +42,51 @@ header h1 {
     margin: 0; /* Elimina el margen por defecto */
 }
 
-/* Navegación */
-nav ul {
-    display: flex;
-    justify-content: center;
-    background-color: #85bb88; /* Verde brillante */
-    list-style: none;
-    padding: 15px 0;
-    margin-top: 10px;
+/* Navegación (Actualizado a Bootstrap) */
+.navbar-custom {
+    background: linear-gradient(90deg, #85bb88, #a3d9a5); /* Fondo degradado */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 10px 20px; /* Ajusta el padding del navbar */
 }
 
-nav ul li {
-    margin: 0 20px;
-}
-
-nav ul li a {
+.navbar-custom .navbar-brand {
     color: rgb(29, 107, 112);
-    text-decoration: none;
+    font-weight: 900;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 20px; /* Reduce el margen derecho */
+}
+
+.navbar-custom .navbar-nav {
+    margin-left: auto; /* Alinea los elementos del nav a la derecha */
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    color: rgb(29, 107, 112);
     font-weight: 900;
     font-size: 1.1rem;
     font-family: 'Poppins', sans-serif;
+    transition: color 0.3s, text-decoration 0.3s, transform 0.3s; /* Transiciones suaves */
+    padding: 5px 10px; /* Ajusta el padding interno */
+    border-radius: 5px; /* Bordes redondeados */
 }
 
-nav ul li a:hover {
+.navbar-custom .navbar-nav .nav-link:hover {
     text-decoration: underline;
     color: #ee288b;
+    background-color: rgba(238, 40, 139, 0.1); /* Fondo al pasar el cursor */
+    transform: scale(1.05); /* Efecto de escala */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(29, 107, 112, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .navbar-custom .navbar-nav .nav-link {
+        font-size: 1rem; 
+    }
 }
 
 /* Secciones principales */

@@ -106,58 +106,35 @@
             </ul>
         </section>
 
-        <section id="catalogo">
+        <section id="catalogo-main">
             <h2>Catálogo de Plantas</h2>
-            <div class="catalogo">
-                <div class="planta">
-                    <img src="img/suculenta_bckgrnd.jpg" alt="Suculenta" class="planta-img">
-                    <h3>Suculenta</h3>
-                    <p>Una planta resistente y fácil de cuidar, perfecta para interiores y exteriores.</p>
-                    <a href="c_suculenta.html">
-                        <button class="btn-link"> Ver más </button>
-                    </a>
-                </div>
-
-                <div class="planta">
-                    <img src="img/flores_bckgrnd.jpg" alt="Flores" class="planta-img">
-                    <h3>Flores de Temporada</h3>
-                    <p>Disfruta de colores vibrantes con nuestras flores frescas de temporada.</p>
-                    <a href="c_suculenta.html">
-                        <button class="btn-link"> Ver más </button>
-                    </a>
-                </div>
-                <div class="planta">
-                    <img src="img/ornamentales_bckgrnd.jpg" alt="Planta Ornamental" class="planta-img">
-                    <h3>Plantas Ornamentales</h3>
-                    <p>Plantas decorativas que aportan un toque elegante a tu hogar o jardín.</p>
-                    <a href="c_suculenta.html">
-                        <button class="btn-link"> Ver más </button>
-                    </a>
-                </div>
+            <div class="catalogo-list">
+              <!-- Los productos se generarán dinámicamente -->
             </div>
-        </section>
+          </section>          
         
         
-        <section id="contacto">
+          <section id="contacto">
             <h2>Consultas</h2>
-            <form action="https://formspree.io/f/mdkonkrz" method="POST">
-                <div>
-                    <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div>
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" name="_replyto" required>
-                </div>
-                <div>
-                    <label for="message">Mensaje:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <div>
-                    <button type="submit">Enviar</button>
-                </div>
+            <form id="contacto-formulario" action="https://formspree.io/f/mdkonkrz" method="POST">
+              <div class="form-grupo">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" placeholder="Ingresa tu nombre completo" required>
+              </div>
+              <div class="form-grupo">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="_replyto" placeholder="Ingresa tu correo electrónico" required>
+              </div>
+              <div class="form-grupo">
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Escribi tu mensaje aquí..." required></textarea>
+              </div>
+              <div class="form-grupo">
+                <button type="submit">Enviar</button>
+              </div>
             </form>
-        </section>
+          </section>
+          
         
 
         <section id="contacto">

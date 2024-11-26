@@ -44,5 +44,96 @@ function mostrarPlantas(plantas) {
 // Llama a la función cuando se cargue la página
 document.addEventListener('DOMContentLoaded', obtenerPlantas);
 
+// Módulo del catálogo de productos
+
+// Función para crear un array de productos
+function crearProductos() {
+    return [
+        {
+            nombre: "Suculenta",
+            descripcion: "Una planta resistente y fácil de cuidar, perfecta para interiores y exteriores.",
+            imagen: "img/suculenta_bckgrnd.jpg",
+            enlace: "c_suculenta.html",
+        },
+        {
+            nombre: "Flores de Temporada",
+            descripcion: "Disfruta de colores vibrantes con nuestras flores frescas de temporada.",
+            imagen: "img/flores_bckgrnd.jpg",
+            enlace: "c_flores.html",
+        },
+        {
+            nombre: "Plantas Ornamentales",
+            descripcion: "Plantas decorativas que aportan un toque elegante a tu hogar o jardín.",
+            imagen: "img/ornamentales_bckgrnd.jpg",
+            enlace: "c_ornamentales.html",
+        },
+        {
+            nombre: "Cactus",
+            descripcion: "Perfectos para ambientes cálidos, fáciles de mantener y hermosos.",
+            imagen: "img/cactus.jpg",
+            enlace: "c_cactus.html",
+        },
+    ];
+}
+
+// Función para renderizar los productos en el HTML
+function renderizarProductos(productos, contenedorSelector) {
+    const contenedor = document.querySelector(contenedorSelector);
+    if (!contenedor) {
+        console.error(`No se encontró el contenedor con el selector: ${contenedorSelector}`);
+        return;
+    }
+
+    contenedor.innerHTML = ""; // Limpia el contenido antes de añadir los productos
+
+    productos.forEach((producto) => {
+        // Plantilla dinámica de cada producto
+        const productoHTML = `
+            <div class="planta">
+                <img src="${producto.imagen}" alt="${producto.nombre}" class="planta-img">
+                <h3>${producto.nombre}</h3>
+                <p>${producto.descripcion}</p>
+                <a href="${producto.enlace}">
+                    <button class="btn-link">Ver más</button>
+                </a>
+            </div>
+        `;
+        // Añadir el producto al contenedor
+        contenedor.innerHTML += productoHTML;
+    });
+}
+
+// Inicializar el catálogo en la página
+function inicializarCatalogo() {
+    const productos = crearProductos();
+    renderizarProductos(productos, "#catalogo-main .catalogo-list");
+}
+
+// Asegurarse de que el DOM esté cargado antes de inicializar
+document.addEventListener("DOMContentLoaded", () => {
+    inicializarCatalogo();
+});
+
+//FORMULARIO
+document.addEventListener("DOMContentLoaded", () => {
+    const formulario = document.getElementById("contacto-formulario");
+  
+    formulario.addEventListener("submit", (event) => {
+      // Obtiene los campos del formulario
+      const nombre = document.getElementById("name").value.trim();
+      const correo = document.getElementById("email").value.trim();
+      const mensaje = document.getElementById("message").value.trim();
+  
+      // Verifica si todos los campos están completos
+      if (nombre === "" || correo === "" || mensaje === "") {
+        console.error("Por favor, completa todos los campos antes de enviar el formulario.");
+        event.preventDefault(); // Evita que el formulario se envíe
+      } else {
+        console.log("Formulario enviado correctamente.");
+      }
+    });
+  });
+  
+
 
 

@@ -17,10 +17,31 @@
     </head>
 <body>
 
-    <header>
-        <img src="img/suculenta_bckgrnd.png" alt="Plantas de Ninfa-Garden" class="logo">
-        <h1>Ninfa-Garden</h1>
-    </header>
+    <header class="contenedor-carrusel">
+        <div id="carrusel" class="carrusel">
+          <div class="item-carrusel">
+            <img src="img/flores_bckgrnd_bak.jpg" alt="Plantas de Ninfa-Garden" class="imagen-carrusel">
+            <div class="texto-carrusel">
+              <h1>Ninfa-Garden</h1>
+              <p>Explora la belleza natural de nuestro jardín</p>
+            </div>
+          </div>
+          <div class="item-carrusel">
+            <img src="img/ninfagarden3.jpg" alt="Plantas de Ninfa-Garden" class="imagen-carrusel">
+            <div class="texto-carrusel">
+              <h1>Jardín de Flores</h1>
+              <p>Sumergite en el mundo de colores vibrantes</p>
+            </div>
+          </div>
+          <div class="item-carrusel">
+            <img src="img/ninfagarden2.jpg" alt="Plantas de Ninfa-Garden" class="imagen-carrusel">
+            <div class="texto-carrusel">
+              <h1>Hojas Verdes</h1>
+              <p>Conecta con la naturaleza en su estado más puro</p>
+            </div>
+          </div>
+        </div>
+      </header>  
 
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container">
@@ -44,6 +65,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.html#catalogo">Catálogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#catalogo-aleatorio">PlantRandom</a>
                     </li>
                 </ul>
             </div>
@@ -171,5 +195,28 @@
         // Inicializar el carrito al cargar la página
         updateCart();
     </script>
+    <script>
+        const carrusel = document.getElementById("carrusel");
+        let indiceActual = 0;
+        const items = document.querySelectorAll(".item-carrusel");
+        const totalItems = items.length;
+      
+        function siguienteImagen() {
+          indiceActual = (indiceActual + 1) % totalItems;
+          actualizarPosicionCarrusel();
+        }
+      
+        function imagenAnterior() {
+          indiceActual = (indiceActual - 1 + totalItems) % totalItems;
+          actualizarPosicionCarrusel();
+        }
+      
+        function actualizarPosicionCarrusel() {
+          carrusel.style.transform = `translateX(-${indiceActual * 100}%)`;
+        }
+      
+        // Intervalo para cambio automático de imagen
+        setInterval(siguienteImagen, 5000); // Cambiar cada 5 segundos
+      </script>
 </body>
 </html>

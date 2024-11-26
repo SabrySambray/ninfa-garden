@@ -19,11 +19,32 @@
 
 <body>
 
-    <header>
-        
-        <img src="img/flores_bckgrnd_bak.jpg" alt="Plantas de Ninfa-Garden" class="logo">
-        <h1>Ninfa-Garden</h1>
-    </header>
+    <header class="contenedor-carrusel">
+        <div id="carrusel" class="carrusel">
+          <div class="item-carrusel">
+            <img src="img/flores_bckgrnd_bak.jpg" alt="Plantas de Ninfa-Garden" class="imagen-carrusel">
+            <div class="texto-carrusel">
+              <h1>Ninfa-Garden</h1>
+              <p>Explora la belleza natural de nuestro jardín</p>
+            </div>
+          </div>
+          <div class="item-carrusel">
+            <img src="img/ninfagarden3.jpg" alt="Plantas de Ninfa-Garden" class="imagen-carrusel">
+            <div class="texto-carrusel">
+              <h1>Jardín de Flores</h1>
+              <p>Sumergite en el mundo de colores vibrantes</p>
+            </div>
+          </div>
+          <div class="item-carrusel">
+            <img src="img/ninfagarden2.jpg" alt="Plantas de Ninfa-Garden" class="imagen-carrusel">
+            <div class="texto-carrusel">
+              <h1>Hojas Verdes</h1>
+              <p>Conecta con la naturaleza en su estado más puro</p>
+            </div>
+          </div>
+        </div>
+      </header>      
+      
     
 
 
@@ -50,6 +71,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#catalogo">Catálogo</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#catalogo-aleatorio">PlantRandom</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -66,9 +90,9 @@
             <p><strong>Ninfa-Garden</strong> nace con la misión de acercar la naturaleza a tu vida, creando espacios verdes únicos y acogedores. Somos un equipo apasionado por las plantas y el diseño de jardines, dedicados a ofrecerte la mejor calidad en plantas ornamentales, suculentas, flores y decoración para exteriores.</p>
         </section>
 
-        <section id="catalogo">
+        <section id="catalogo-aleatorio">
             <h2>Plantas Aleatorias (API de plantas Perenual)</h2>
-            <div id="plantas-container" class="catalogo"></div>
+            <div id="plantas-container" class="catalogo-aleatorio"></div>
         </section>
 
         <section id="servicios">
@@ -156,25 +180,59 @@
     
 
     <footer>
-        <p>&copy; 2024 Ninfa-Garden. Todos los derechos reservados.</p>
-        <!-- Redes sociales -->
-    <div class="social-media">
-        <a href="https://www.facebook.com/ninfagarden" target="_blank" class="social-icon">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com/ninfa_garden29?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-icon">
-            <i class="fab fa-instagram"></i>
-        <a href="https://www.linkedin.com/company/ninfagarden" target="_blank" class="social-icon">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
-        </a>
-    </div>
+        <div class="footer-contenido">
+            <p>&copy; 2024 Ninfa-Garden. Todos los derechos reservados.</p>
+    
+            <!-- Redes sociales -->
+            <div class="redes-sociales">
+                <a href="https://www.facebook.com/ninfagarden" target="_blank" class="icono-social">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/ninfa_garden29?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="icono-social">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/ninfagarden" target="_blank" class="icono-social">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+    
+            <!-- Contacto o información adicional (opcional) -->
+            <div class="informacion-footer">
+                <p>Contacto: info@ninfagarden.com</p>
+                <p>Visítanos en nuestras redes para más información.</p>
+            </div>
+        </div>
     </footer>
+    
 
     <script src="js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const carrusel = document.getElementById("carrusel");
+        let indiceActual = 0;
+        const items = document.querySelectorAll(".item-carrusel");
+        const totalItems = items.length;
+      
+        function siguienteImagen() {
+          indiceActual = (indiceActual + 1) % totalItems;
+          actualizarPosicionCarrusel();
+        }
+      
+        function imagenAnterior() {
+          indiceActual = (indiceActual - 1 + totalItems) % totalItems;
+          actualizarPosicionCarrusel();
+        }
+      
+        function actualizarPosicionCarrusel() {
+          carrusel.style.transform = `translateX(-${indiceActual * 100}%)`;
+        }
+      
+        // Intervalo para cambio automático de imagen
+        setInterval(siguienteImagen, 5000); // Cambiar cada 5 segundos
+      </script>
+           
     
 
 </body>

@@ -1,3 +1,4 @@
+// MODULO PARA LAS PLANTAS GENERADAS A PARTIR DE UN API REST
 const API_KEY = 'sk-uJnP6744ee10729b17772'; 
 const API_URL = 'https://perenual.com/api/species-list?key=' + API_KEY;
 
@@ -59,19 +60,19 @@ function crearProductos() {
             nombre: "Flores de Temporada",
             descripcion: "Disfruta de colores vibrantes con nuestras flores frescas de temporada.",
             imagen: "img/flores_bckgrnd.jpg",
-            enlace: "c_flores.html",
+            enlace: "c_suculenta.html",
         },
         {
             nombre: "Plantas Ornamentales",
             descripcion: "Plantas decorativas que aportan un toque elegante a tu hogar o jardín.",
             imagen: "img/ornamentales_bckgrnd.jpg",
-            enlace: "c_ornamentales.html",
+            enlace: "c_suculenta.html",
         },
         {
             nombre: "Cactus",
             descripcion: "Perfectos para ambientes cálidos, fáciles de mantener y hermosos.",
             imagen: "img/cactus.jpg",
-            enlace: "c_cactus.html",
+            enlace: "c_suculenta.html",
         },
     ];
 }
@@ -114,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
     inicializarCatalogo();
 });
 
-//FORMULARIO
+//FORMULARIO (FUNCIÓN PARA REVISAR SI ESTA COMPLETO)
 document.addEventListener("DOMContentLoaded", () => {
     const formulario = document.getElementById("contacto-formulario");
   
